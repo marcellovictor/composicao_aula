@@ -77,10 +77,13 @@ public class Main {
 		String month_analysed = sc.nextLine();
 		Date month_contract = month_year.parse(month_analysed);
 		
-		Calendar cal_income = Calendar.getInstance();
-		cal_income.setTime(month_contract);
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(month_contract);
 		
-		Double income = worker.income(cal_income.YEAR, (cal_income.MONTH + 1));
+		int year = cal.YEAR;
+		int month = cal.MONTH + 1;
+		
+		Double income = worker.income(year, month);
 		
 		System.out.println("Name: " + worker.getName());
 		System.out.println("Department: " + worker.getDepartment().getName());
