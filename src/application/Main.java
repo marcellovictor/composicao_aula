@@ -80,8 +80,8 @@ public class Main {
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(month_contract);
 		
-		int year = cal.YEAR;
-		int month = cal.MONTH + 1;
+		int year = cal.get(cal.YEAR);
+		int month = cal.get(cal.MONTH) + 1;
 		
 		Double income = worker.income(year, month);
 		
